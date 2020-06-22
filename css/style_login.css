@@ -89,6 +89,7 @@ button{
   text-transform: uppercase;
   font-weight: 600;
   font-family: sans-serif;
+  
   background: -webkit-linear-gradient(left ,#fddfe1,#f26e73,#84568e,#7182e8);
 }
 

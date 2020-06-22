@@ -1,71 +1,176 @@
 * {
   margin: 0;
-  padding: 0; }
+  padding: 0; 
+  box-sizing: border-box;
+}
 
 body {
-  background-color: #f0f0f0; }
+   background: #d9d9d9;
+  line-height: 1.5;
+}
 
 .header {
-  position: absolute;
-  top: 0;
-  min-width: 1024px;
-  z-index: 3;
-  background: #202020;
+  background-color:#202020;
+  max-width: 1520px;
   width: 100%;
-  height: 55px;
-  color: #ffffff; }
-  .header .wrap--main {
-    max-width: 1200px;
-    min-width: 1024px;
-    width: 100%;
-    height: 55px;
-    background: #202020;
-    margin: auto;
-    position: relative;
-    display: block; }
-    .header .wrap--main .wrap__logo {
-      float: left;
-      width: 300px;
-      display: block;
-      padding: 1px 0 11px 5px; }
-      .header .wrap--main .wrap__logo img {
-        height: auto;
-        width: 300px; }
-    .header .wrap--main .wrap__form {
-      float: left;
-      width: 275px;
-      height: 39px;
-      margin: 10px 10px 0 10px;
-      background: #fff;
-      position: relative;
-      border-radius: 4px; }
-      .header .wrap--main .wrap__form input {
-        border: 0;
-        outline: none;
-        text-indent: 5px;
-        padding: 12px;
-        border-radius: 4px; }
-    .header .wrap--main nav {
-      width: 300px;
-      background: #202020;
-      margin: 0;
-      padding: 0;
-      display: table;
-      float: left; }
-      .header .wrap--main nav a {
-        font-size: 20px;
-        font-family: sans-serif;
-        color: white;
-        text-decoration: none;
-        display: table-cell;
-        float: left;
-        width: 75px;
-        height: 44px;
-        padding: 0;
-        color: white;
-        background: #202020;
-        text-align: center;
-        text-transform: uppercase;
-        position: relative; }
+  height: 60px;
+  color: #ffffff;
+  font-family: segoeui,Microsoft JhengHei,sans-serif;
 
-/*# sourceMappingURL=style.css.map */
+
+}
+
+.header .wrap--main {
+  display: block; 
+  max-width: 1200px;
+  min-width: 1024px;
+  width: 100%;
+  height: 60px;
+  background: #202020;
+  margin: auto;
+  position: relative;
+  line-height: 55px;
+}
+
+.wrap__logo {
+  float: left;
+  width: 300px;
+  display: block;
+  padding: 1px 0 11px 5px; 
+  float: left;
+}
+
+.wrap__logo img {
+  height: auto;
+  width: 80%;
+  margin-top: 5px; 
+}
+
+.wrap__menu ul{
+  list-style-type:none; 
+}
+
+.wrap__menu ul li{
+  float: left;
+  width: 170px;
+  height: 55px;
+  line-height: 55px;
+  text-align: center;
+  font-size: 20px;
+  background-color:#202020;
+}
+
+.wrap__menu ul li a{
+  text-decoration: none;
+  color: white;
+  display: block;
+}
+
+.wrap__menu ul li ul div li{
+  display: none;
+}
+
+.wrap__menu ul li ul div li a{color: black;}
+
+
+.wrap__menu ul li a:hover{
+  color: #f7313f;
+ 
+  
+}
+
+.wrap__menu ul li:hover ul div li{
+  display: block;
+  background-color: white;
+  box-shadow: 0 8px  16px 0  rgba(0, 0, 0, 0.8);
+}
+
+.body {
+  width: 100%;
+  font-family: segoeui,Microsoft JhengHei,sans-serif;
+  position: absolute;
+  margin: auto;
+}
+
+.slider{
+  position: relative;
+}
+
+.body .slider .slider__image{
+  width: 100%;
+  height: 100%;
+  display: none;
+ 
+}
+.body .slider .slider__image img{
+  width: 100%;
+  height:100%;
+  object-fit: cover;
+}
+
+.body .slider .slider__btn .prev{
+  text-transform: uppercase;
+  position: absolute;
+  top: 239px;
+  left: 43px;
+  /* display: none; */
+  cursor:pointer;
+  transition:  0.6s ease;
+  user-select: none;
+
+}
+.body .slider .slider__btn .next{
+  text-transform: uppercase;
+  position: absolute;
+  top: 239px;
+  right: 43px;
+  /* display: none; */
+  cursor:pointer;
+  transition:  0.6s ease;
+  user-select: none;
+} 
+
+.body .slider .prev img ,.next img{
+  width: 50px;
+  height: auto;
+}
+
+.body .slider .prev:hover,
+.body .slider .next:hover{
+  background-color: grey;
+}
+
+
+/* slider dots */
+
+.slider__dots .dot{
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+.active, .slider__dots .dot:hover {
+  background-color: #717171;
+}
+
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
