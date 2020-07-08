@@ -3,7 +3,98 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+	<title>Document</title>
+	<style>
+		* {
+		margin: 0;
+		padding: 0; 
+		box-sizing: border-box;
+		}
+		body {
+		background: #f0f0f0;
+		/* width: 1349px;   */
+		height: auto;
+		padding: 58px 56px;
+
+		}
+		.products{
+	
+		width: 100%; 
+		height: 100%;
+		padding: 0 72px ;
+		display: flex;
+		position: relative;
+		flex-wrap: wrap;
+		direction: ltr;
+		justify-content: space-around;
+		}
+
+
+		.product{
+		max-width: 352px;
+		width: calc((100% - 111px)/4);
+		display: flex;
+		position: relative;
+		padding: 26px;
+		display: flex;
+		flex-direction: column;
+		background-color: #fff;
+		
+		}
+		.product a{
+		background-color: #fff;
+		display: block;
+		text-decoration: none;
+		color: #202020;
+		font-family:  segoeui,Microsoft JhengHei,sans-serif;
+		}
+		.product a .product__showitem__name p{
+		font-size: 20px;
+		margin: 24px 0;
+		}
+		.product a .product__showitem__name p:hover{
+		color: #f7313f;
+		transition: ease 0.2s ;
+		}
+		.product .product__showitem .product__showitem__parameter ul{
+		list-style: none;
+		font-size: 14px;
+		margin-bottom: 30px;
+		}
+		.product a .product__showitem__parameter ul li{
+		padding: 5px 5px 5px 0px;
+		}
+		.product a .product__showitem__parameter ul li:hover{
+		color: #f7313f;
+		transition: ease 0.3s;
+		}
+
+		.product__showitem img{
+		width: 100%;
+		height: auto;
+		
+		}
+		.product .product__discount{
+		width: 200px;
+		height: 0px;
+		position: absolute;
+		bottom: 33px;
+		left: 142px;
+		transform: rotate(318deg);
+		border-right: 35px solid transparent;
+		border-top: 39px solid #fa7c08;
+		border-left: 44px solid transparent;
+		color: #fff;
+		font-weight: 400;
+		font-size: 20px;
+		font-family:  segoeui,Microsoft JhengHei,sans-serif;
+		text-align: center;
+		}
+		.product .product__discount p#product__discount__text {
+		margin-top: -34px;
+		}
+	</style>	
+	
 </head>
 <body>
     <div class="products" id="Products--Phone">
