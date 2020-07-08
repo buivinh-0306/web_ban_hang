@@ -15,7 +15,7 @@
 
 body {
   background: #fff;
-  width: 1349px; 
+  /* width: 1349px;  */
   height: auto;
 
 }
@@ -119,8 +119,11 @@ body {
   color: #202020;
 }
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 309ec86fb653216ffe9ab9bae63ddc9a4742851e
 .slide--container{
   position: relative;
   width: 100%;
