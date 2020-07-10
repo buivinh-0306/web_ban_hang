@@ -148,9 +148,7 @@ body {
   height: 100%;
   width: auto;
 }
-#Wrapper_item_first{
-  margin-left: 0;
-}
+
 .slide__carousel__WrapperOut__Wrapper .Wrapper__item{
   width: calc((100vw - 396px)/5);
   max-width: 240px;

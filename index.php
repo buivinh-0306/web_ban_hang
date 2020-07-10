@@ -73,7 +73,7 @@
 			<div class="slide__carousel__WrapperOut">
 				<div class="slide__carousel__WrapperOut__Wrapper">
 					<?php foreach($slide as $item) { ?>
-					<div class="Wrapper__item" id="Wrapper_item_first">
+					<div class="Wrapper__item">
 						<div class="item">
 							<a href="<?php echo $item['link']?>">
 								<img src="<?php echo $item['images']?>" alt="">
@@ -213,7 +213,7 @@
 	</div>
 	
 	
-	<!-- <script type="text/javascript" src="js/javascript.js"></script> -->
+	<script type="text/javascript" src="js/javascript.js"></script>
 	
 </body>
 </html>
