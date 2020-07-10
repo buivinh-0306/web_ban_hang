@@ -119,11 +119,6 @@ body {
   color: #202020;
 }
 
-<<<<<<< HEAD
-
-
-=======
->>>>>>> 309ec86fb653216ffe9ab9bae63ddc9a4742851e
 .slide--container{
   position: relative;
   width: 100%;
@@ -147,6 +142,7 @@ body {
   margin: 0 auto;
 } 
 .slide__carousel__WrapperOut__Wrapper{
+  width: 5796px;
   position: relative;
   display: flex;
   height: 100%;
@@ -229,7 +225,7 @@ body {
 
 
 .Actions--container{
-  background: #2c2c2c url('../images/rog_bg_pattern.png');
+  background: #2c2c2c url('../images/banner,background/rog_bg_pattern.png');
   width: 100%;
   max-height: 1310px;
   background-size: 100%;
@@ -406,7 +402,7 @@ body {
   width: 100%;
 }
 .footer .footer__story{
-  background: url('../images/FDFFE426-0A29-40D5-8E26-C838EB26.png');
+  background: url('../images/banner,background/FDFFE426-0A29-40D5-8E26-C838EB26.png');
   background-size: 100%;
   padding: 69px 0 34px 0 ;
   display: flex;
@@ -434,7 +430,7 @@ body {
 }
 .footer__content{
   
-  background:no-repeat #161616 url('../images/07B097A3-E9C2-4AFF-9196-3ADE8F5B.png');
+  background:no-repeat #161616 url('../images/banner,background/07B097A3-E9C2-4AFF-9196-3ADE8F5B.png');
   background-size: auto;
   background-position: 50%;
   height: 520px;

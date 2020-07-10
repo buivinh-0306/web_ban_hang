@@ -1,1 +1,0 @@
-<?php session_start();unset($_SESSION['infoProduct'][$_GET['id']]);header('Location:index.php');?>
