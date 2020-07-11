@@ -69,7 +69,7 @@
 	<?php } ?>
 	<h2 class="title--slide">EXPLORE OUR PRODUCTS</h2>
 	<div class="slide--container">
-		 <div class="slide__carousel" ><!--  onmouseover="clickable()" onmouseout="clickdisable()" -->
+		 <div class="slide__carousel"   onmouseover="clickable()" onmouseout="clickdisable()" >
 			<div class="slide__carousel__WrapperOut">
 				<div class="slide__carousel__WrapperOut__Wrapper">
 					<?php foreach($slide as $item) { ?>

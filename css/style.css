@@ -179,6 +179,7 @@ body {
 
 .Wrapper__item .item .item__name{
   margin-top:25px;
+  text-transform: capitalize;
 }  
 .Wrapper__item .item a:hover{
   color: #f7313f;

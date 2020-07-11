@@ -22,9 +22,9 @@ var width = document.querySelector('.slide__carousel').clientWidth
 
 function next(){
     matrix.m41-=width
-    if((-matrix.m41)>=width)//widthcarousel
+    if((-matrix.m41)>=width)
     {
-        matrix.m41 -= -width;
+        // matrix.m41 -= -width;
         document.querySelector('.slide__carousel__WrapperOut__Wrapper').style.transition = "all 800ms ease 0s"
         document.querySelector('.slide__carousel__WrapperOut__Wrapper').style.transform = 'translate3d('+matrix.m41+'px, 0, 0)'
         
@@ -45,4 +45,4 @@ function prev(){
 		document.querySelector('.slide__carousel__WrapperOut__Wrapper').style.transform = 'translate3d('+matrix.m41+'px, 0, 0)'
 	}
 }
-var auto = setInterval(next,10000)
+
