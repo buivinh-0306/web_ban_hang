@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th7 10, 2020 lúc 10:36 AM
+-- Thời gian đã tạo: Th7 15, 2020 lúc 08:38 AM
 -- Phiên bản máy phục vụ: 10.4.11-MariaDB
 -- Phiên bản PHP: 7.3.17
 
@@ -96,17 +96,43 @@ CREATE TABLE `customer` (
 CREATE TABLE `detail` (
   `DetailID` int(11) NOT NULL,
   `Display` varchar(225) DEFAULT NULL,
+  `Card` varchar(225) DEFAULT NULL,
   `gateway` varchar(225) DEFAULT NULL,
-  `OS` varchar(100) DEFAULT NULL,
+  `OS` varchar(50) DEFAULT NULL,
   `RearCamera` varchar(225) DEFAULT NULL,
   `FrontCamera` varchar(225) DEFAULT NULL,
-  `CPU` varchar(225) DEFAULT NULL,
-  `Ram` varchar(225) DEFAULT NULL,
-  `ROM` varchar(225) DEFAULT NULL,
+  `CPU` varchar(50) DEFAULT NULL,
+  `RAM` varchar(50) DEFAULT NULL,
+  `ROM` varchar(50) DEFAULT NULL,
+  `Network` varchar(225) NOT NULL,
   `battery` varchar(50) DEFAULT NULL,
   `design` varchar(225) DEFAULT NULL,
   `ProductID` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Đang đổ dữ liệu cho bảng `detail`
+--
+
+INSERT INTO `detail` (`DetailID`, `Display`, `Card`, `gateway`, `OS`, `RearCamera`, `FrontCamera`, `CPU`, `RAM`, `ROM`, `Network`, `battery`, `design`, `ProductID`) VALUES
+(1, 'ads', 'ád', 'áđá', 'adsd', 'sadsad', 'ád', 'ads', 'gdfg', 'ádsad', '', 'áds', 'adsasd', 27),
+(2, '$Display', '$Card', '$gateway', '$OS', '$RearCamera', '$FrontCamera', '$CPU', '$RAM', '$ROM', '$network', '$battery', '$design', 29),
+(3, '$Display', '$Card', '$gateway', '$OS', '$RearCamera', '$FrontCamera', '$CPU', '$RAM', '$ROM', '$network', '$battery', '$design', 30),
+(4, 'ih', 'hg', 'k', 'jn', 'l', 'h', 'iuh', 'olj', 'jnhb', 'jgh', 'jh', 'jh', 35),
+(5, 'ih', 'hg', 'k', 'jn', 'l', 'h', 'iuh', 'olj', 'jnhb', 'jgh', 'jh', 'jh', 35),
+(6, 'ih', 'hg', 'k', 'jn', 'l', 'h', 'iuh', 'olj', 'jnhb', 'jgh', 'jh', 'jh', 35),
+(7, 'ih', 'hg', 'k', 'jn', 'l', 'h', 'iuh', 'olj', 'jnhb', 'jgh', 'jh', 'jh', 35),
+(8, 'ih', 'hg', 'k', 'jn', 'l', 'h', 'iuh', 'olj', 'jnhb', 'jgh', 'jh', 'jh', 35),
+(9, 'ih', 'hg', 'k', 'jn', 'l', 'h', 'iuh', 'olj', 'jnhb', 'jgh', 'jh', 'jh', 35),
+(10, 'ih', 'hg', 'k', 'jn', 'l', 'h', 'iuh', 'olj', 'jnhb', 'jgh', 'jh', 'jh', 35),
+(11, 'ih', 'hg', 'k', 'jn', 'l', 'h', 'iuh', 'olj', 'jnhb', 'jgh', 'jh', 'jh', 35),
+(12, 'ih', 'hg', 'k', 'jn', 'l', 'h', 'iuh', 'olj', 'jnhb', 'jgh', 'jh', 'jh', 35),
+(13, 'ih', 'hg', 'k', 'jn', 'l', 'h', 'iuh', 'olj', 'jnhb', 'jgh', 'jh', 'jh', 35),
+(14, 'ih', 'hg', 'k', 'jn', 'l', 'h', 'iuh', 'olj', 'jnhb', 'jgh', 'jh', 'jh', 35),
+(15, 'ih', 'hg', 'k', 'jn', 'l', 'h', 'iuh', 'olj', 'jnhb', 'jgh', 'jh', 'jh', 35),
+(16, 'ih', 'hg', 'k', 'jn', 'l', 'h', 'iuh', 'olj', 'jnhb', 'jgh', 'jh', 'jh', 35),
+(17, 'ih', 'hg', 'k', 'jn', 'l', 'h', 'iuh', 'olj', 'jnhb', 'jgh', 'jh', 'jh', 35),
+(18, 'vinhbiu', 'vinhbiu', 'vinhbiu', 'vinhbiu', 'vinhbiu', 'vinhbiu', 'vinhbiu', 'vinhbiu', 'vinhbiu', 'vinhbiu', 'v', 'vinhbiu', 36);
 
 -- --------------------------------------------------------
 
@@ -144,19 +170,41 @@ CREATE TABLE `orders` (
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `products`
+-- Cấu trúc bảng cho bảng `product`
 --
 
-CREATE TABLE `products` (
-  `ProductID` int(11) NOT NULL,
+CREATE TABLE `product` (
+  `productID` int(11) NOT NULL,
   `ProductName` varchar(225) DEFAULT NULL,
   `ProductImage` varchar(225) DEFAULT NULL,
   `PriceCurrent` int(11) DEFAULT NULL,
   `PricePromo` varchar(225) DEFAULT NULL,
   `Brand` varchar(225) DEFAULT NULL,
   `Quantity` int(11) DEFAULT NULL,
-  `GroupProduct` varchar(50) NOT NULL
+  `GroupProduct` varchar(50) NOT NULL,
+  `folder` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Đang đổ dữ liệu cho bảng `product`
+--
+
+INSERT INTO `product` (`productID`, `ProductName`, `ProductImage`, `PriceCurrent`, `PricePromo`, `Brand`, `Quantity`, `GroupProduct`, `folder`) VALUES
+(22, 'vinh', 'images/product/h525 (1).png', 8406, '00', '04384', 1531, '3123', '3123'),
+(23, 'bùi', 'images/product/h525 (2).png', 2147483647, '41022', 'adfa', 6666, 'dghf', 'dfgh'),
+(24, 'dhgf', 'images/product/h525 (1).png', 250545, '110111', 'dfghdf', 555, 'fghd', 'dfghdfg'),
+(25, 'vinh-test', 'images/product/h525 (1).png', 693401, '5344', 'vinh-test', 4538, 'vinh-test', 'vinh-test'),
+(26, 'vinh-test2', 'images/product/h525 (1).png', 113543, '0', 'vinh-test', 5435, 'vinh-test2', 'vinh-test2'),
+(27, 'v', 'images/product/h525 (2).png', 100000, '100', 'a', 99, '455', '456'),
+(28, 'sd', 'images/product/h525.png', 1000, '0', 'ghj', 99, 'dfgfd', 'dgfdg'),
+(29, 'aaa', 'images/product/h525.png', 1000, '0', 'gfhgfh', 99, 'ghyjgh', 'fdgdfg'),
+(30, 'vvv', 'images/product/h525 (2).png', 1000, '0', 'uuu', 99, 'ee', 'eee'),
+(31, 'ccc', 'images/product/h525 (2).png', 10, '0', 'd', 10, '1', '2'),
+(32, 'd', 'images/product/h525 (1).png', 10, '0', '1', 4, 'd', 'g'),
+(33, 'd', 'images/product/h525.png', 10, '0', '2', 2, 'fd', 'd'),
+(34, 'd', 'images/product/h525 (2).png', 10, '0', '1', 1, '1', '1'),
+(35, 'aa', 'images/product/h525.png', 10, '0', 'dfc', 10, 'dfas', 'dsvfs'),
+(36, 'vinhbiu', 'images/product/h525 (2).png', 403, '0', 'asus', 9699, '60', '360');
 
 -- --------------------------------------------------------
 
@@ -165,13 +213,13 @@ CREATE TABLE `products` (
 --
 
 CREATE TABLE `promotion` (
-  `PromotionID` int(11) NOT NULL,
-  `Promo1` varchar(225) DEFAULT NULL,
-  `Promo2` varchar(225) DEFAULT NULL,
-  `Promo3` varchar(225) DEFAULT NULL,
-  `Promo4` varchar(225) DEFAULT NULL,
-  `Promo5` varchar(225) DEFAULT NULL,
-  `ProductID` int(11) NOT NULL
+  `promotionID` int(11) NOT NULL,
+  `promo1` varchar(225) DEFAULT NULL,
+  `promo2` varchar(225) DEFAULT NULL,
+  `promo3` varchar(225) DEFAULT NULL,
+  `promo4` varchar(225) DEFAULT NULL,
+  `promo5` varchar(225) DEFAULT NULL,
+  `productID` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -210,7 +258,7 @@ INSERT INTO `slide` (`slideID`, `slideName`, `images`, `link`) VALUES
 (4, 'monitors', 'images/product/monitors/monitor.png', '#'),
 (5, 'phones', 'images/product/phones/phone.png', '#'),
 (6, 'desktops', 'images/product/desktops/desktop.png', '#'),
-(7, 'power supply units', 'images/product/Power Supply Units/power.png', '#'),
+(7, 'power supply units', 'images/product/PowerSupplyUnits/power.png', '#'),
 (8, 'cooling', 'images/product/cooling/cooling.png', '#'),
 (9, 'networking', 'images/product/networking&Controller/networking.png', '#'),
 (10, 'keyboards', 'images/product/keyboards/keyboard.png', '#'),
@@ -221,7 +269,7 @@ INSERT INTO `slide` (`slideID`, `slideName`, `images`, `link`) VALUES
 (15, 'Streaming Kits', 'images/product/streamingkit,case/streamingkit.png', '#'),
 (16, 'Controllers', 'images/product/networking&Controller/Controller.png', '#'),
 (17, 'Power & Protection Gadgets', 'images/product/PowerSupplyUnits/power.png', '#'),
-(18, 'Storage', 'images/product/streamingkit,case/streamingkit.png', '#');
+(18, 'Storage', 'images/product/headsets&audio&storage/storage.png', '#');
 
 -- --------------------------------------------------------
 
@@ -295,23 +343,45 @@ ALTER TABLE `orders`
   ADD KEY `CustomerID` (`CustomerID`);
 
 --
--- Chỉ mục cho bảng `products`
+-- Chỉ mục cho bảng `product`
 --
-ALTER TABLE `products`
-  ADD PRIMARY KEY (`ProductID`);
+ALTER TABLE `product`
+  ADD PRIMARY KEY (`productID`);
 
 --
 -- Chỉ mục cho bảng `promotion`
 --
 ALTER TABLE `promotion`
-  ADD PRIMARY KEY (`PromotionID`),
-  ADD KEY `FK_ProductID` (`ProductID`);
+  ADD PRIMARY KEY (`promotionID`),
+  ADD KEY `productID` (`productID`);
 
 --
 -- Chỉ mục cho bảng `slide`
 --
 ALTER TABLE `slide`
   ADD PRIMARY KEY (`slideID`);
+
+--
+-- AUTO_INCREMENT cho các bảng đã đổ
+--
+
+--
+-- AUTO_INCREMENT cho bảng `detail`
+--
+ALTER TABLE `detail`
+  MODIFY `DetailID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+
+--
+-- AUTO_INCREMENT cho bảng `product`
+--
+ALTER TABLE `product`
+  MODIFY `productID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
+
+--
+-- AUTO_INCREMENT cho bảng `promotion`
+--
+ALTER TABLE `promotion`
+  MODIFY `promotionID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- Các ràng buộc cho các bảng đã đổ
@@ -327,7 +397,7 @@ ALTER TABLE `color_products`
 -- Các ràng buộc cho bảng `detail`
 --
 ALTER TABLE `detail`
-  ADD CONSTRAINT `detail_ibfk_1` FOREIGN KEY (`ProductID`) REFERENCES `products` (`ProductID`);
+  ADD CONSTRAINT `detail_ibfk_1` FOREIGN KEY (`ProductID`) REFERENCES `product` (`productID`);
 
 --
 -- Các ràng buộc cho bảng `orders`
@@ -339,7 +409,7 @@ ALTER TABLE `orders`
 -- Các ràng buộc cho bảng `promotion`
 --
 ALTER TABLE `promotion`
-  ADD CONSTRAINT `FK_ProductID` FOREIGN KEY (`ProductID`) REFERENCES `products` (`ProductID`);
+  ADD CONSTRAINT `promotion_ibfk_1` FOREIGN KEY (`productID`) REFERENCES `products` (`productID`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
