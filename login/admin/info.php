@@ -30,7 +30,7 @@
 
 	
 		adddetail($data['Display'],$data['Card'],$data['gateway'],$data['OS'],$data['RearCamera'],$data['FrontCamera'],$data['CPU'],$data['RAM'],$data['ROM'],$data['network'],$data['battery'],$data['design'],$data['productname']);
-		// header('location: index.php');
+		header('location: add__product.php');
 	}
  	disconnect_db();
 ?>
@@ -145,7 +145,7 @@
 		</div>
     </div>
 	<div class="main-body">
-		<div class="back"><a href="add_product.php">Quay lại</a></div>
+		<div class="back"><a href="add__product.php">Quay lại</a></div>
 		<div class="container">
 			<form action="" method="POST">
 					<caption>Bảng thông số kỹ thuật của sản phẩm</caption>
