@@ -9,7 +9,7 @@
 
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vn">
 <head>
 	<meta charset="UTF-8">
 	<title>ROG - Republic of Gamers｜Global | The Choice of Champions</title>
@@ -22,7 +22,7 @@
 
 	<div class="header header--black">
 		<div class="wrap--main">
-			<a href="#" class="wrap__logo" title="về trang chủ">
+			<a hre class="wrap__logo" title="về trang chủ">
 				<img src="images/logo_rog.png" alt="" title="Trở Về Trang Chủ">
 			</a>
 			<div class="wrap__menu">
@@ -31,7 +31,7 @@
 						<a href="#">Products</a>
 						<ul>
 							<div>
-								<li><a href="#">Laptops</a></li>
+								<li><a href="laptop/index.php">Laptops</a></li>
 								<li><a href="#">Desktops</a></li>
 								<li><a href="#">ROG phones</a></li>
 								<li><a href="#">Components</a></li>

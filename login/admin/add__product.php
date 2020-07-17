@@ -14,6 +14,13 @@
 		$data['group'] = $_POST['group'];
 		$data['folder'] = $_POST['folder'];
 
+		$data['Promo1'] = $_POST['Promo1'];
+		$data['Promo2'] = $_POST['Promo2'];
+		$data['Promo3'] = $_POST['Promo3'];
+		$data['Promo4'] = $_POST['Promo4'];
+		$data['Promo5'] = $_POST['Promo5'];
+
+		addpromo($data['Promo1'],$data['Promo2'],$data['Promo3'],$data['Promo4'],$data['Promo5'],$data['productname']);
 
 		add_product($data['productname'],$data['image'],$data['pricepromo'],$data['pricecurrent'],$data['brand'],$data['quantity'],$data['group'],$data['folder']);
 		header('location: info.php');
@@ -177,6 +184,41 @@
 							<input type="text" name="folder" value="" required>
 						</td>				
 					</tr>
+				</table>
+				<table>
+					<caption>Bảng thông tin khuyến mãi của sản phẩm</caption>
+					<tbody>
+						<tr>
+							<th>Khuyến mãi 1</th>
+							<td>
+								<input class="able" type="text" name="Promo1" value="">
+							</td>				
+						</tr>
+						<tr>
+							<th>Khuyến mãi 2</th>
+							<td>
+								<input class="able" type="text" name="Promo2" value="">
+							</td>				
+						</tr>
+						<tr>
+							<th>Khuyến mãi 3</th>
+							<td>
+								<input class="able" type="text" name="Promo3" value="">
+							</td>				
+						</tr>
+						<tr>
+							<th>Khuyến mãi 4</th>
+							<td>
+								<input class="able" type="text" name="Promo4" value="" >
+							</td>				
+						</tr>
+						<tr>
+							<th>Khuyến mãi 5</th>
+							<td>
+								<input class="able" type="text" name="Promo5" value="">
+							</td>				
+						</tr>
+					</tbody>
 				</table>
 				
 				<div class="btn-add"><input type="submit" name="submit" value="Thêm"></div>

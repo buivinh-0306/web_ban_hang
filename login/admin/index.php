@@ -82,7 +82,7 @@
         .container__column .container__column__menu__sub--menu{
             position: absolute;
             width: 100%;
-            left: 202px;
+            left: 205px;
             top: 0;
             list-style: none;
             background-color:#1a1a1ac9 ;
@@ -185,7 +185,6 @@
         </div>
    </div>
    <div class="copyright">
-   
     <div class="copyright__logo">
         <a href="">
             <img src="../../images/logo_rog.png" alt="">
