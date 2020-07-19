@@ -57,15 +57,7 @@
 		}
 		return $result;
 	}
-    function addpromo($Promo1,$Promo2,$Promo3,$Promo4,$Promo5,$productname){
-	
-		global $conn;
-		connect_db();
-		$sql = "INSERT INTO promotion(Promo1,Promo2,Promo3,Promo4,Promo5,productID) VALUES ('$Promo1','$Promo2','$Promo3','$Promo4','$Promo5',(SELECT product.productID FROM product WHERE product.ProductName='$productname'))";
-		$query = mysqli_query($conn, $sql);
-		return $query;
-	}
-	
+   
     function add_product($product,$image,$pricepromo,$pricecurrent,$brand,$quantity,$group,$folder){
 		global $conn;
 		connect_db();

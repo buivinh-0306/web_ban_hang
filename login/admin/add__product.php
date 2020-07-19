@@ -3,7 +3,23 @@
 	connect_db();
     global $conn;
 	$data = array();
+	function adddetail($Display,$Card,$gateway,$OS,$RearCamera,$FrontCamera,$CPU,$RAM,$ROM,$network,$battery,$design,$productname){
+	
+		global $conn;
+		connect_db();
+		$sql = "INSERT INTO detail(Display,Card,gateway,OS,RearCamera,FrontCamera,CPU,RAM,ROM,Network,battery,design,ProductID) VALUES ('$Display','$Card','$gateway','$OS','$RearCamera','$FrontCamera','$CPU','$RAM','$ROM','$network','$battery','$design',(SELECT product.productID FROM product WHERE product.ProductName='$productname'))";
+		$query = mysqli_query($conn, $sql);
+		return $query;
+	}
 
+	function addpromo($Promo1,$Promo2,$Promo3,$Promo4,$Promo5,$productname){
+		global $conn;
+		connect_db();
+		$sql = "INSERT INTO promotion(Promo1,Promo2,Promo3,Promo4,Promo5,productID) VALUES ('$Promo1','$Promo2','$Promo3','$Promo4','$Promo5',(SELECT product.productID FROM product WHERE product.ProductName='$productname'))";
+		$query = mysqli_query($conn, $sql);
+		return $query;
+	}
+	
     if (isset($_POST['submit'])) {
 		$data['productname'] = $_POST['productname'];
 		$data['image'] = 'images/product/'.$_POST['image'];
@@ -19,11 +35,26 @@
 		$data['Promo3'] = $_POST['Promo3'];
 		$data['Promo4'] = $_POST['Promo4'];
 		$data['Promo5'] = $_POST['Promo5'];
+		
+		$data['Display'] = $_POST['Display'];
+		$data['Card'] = $_POST['Card'];
+		$data['gateway'] = $_POST['gateway'];
+		$data['OS'] = $_POST['OS'];
+		$data['RearCamera'] = $_POST['RearCamera'];
+		$data['FrontCamera'] = $_POST['FrontCamera'];
+		$data['CPU'] = $_POST['CPU'];
+		$data['RAM'] = $_POST['RAM'];
+		$data['ROM'] = $_POST['ROM'];
+		$data['network'] = $_POST['network'];
+		$data['battery'] = $_POST['battery'];
+		$data['design'] = $_POST['design'];
 
-		addpromo($data['Promo1'],$data['Promo2'],$data['Promo3'],$data['Promo4'],$data['Promo5'],$data['productname']);
+		add_product($data['productname'],$data['image'],$data['pricepromo'],$data['pricecurrent'],$data['brand'],$data['quantity'],$data['group'],$data['folder']);////code chạy từ trên xuống dưới :>
+		adddetail($data['Display'],$data['Card'],$data['gateway'],$data['OS'],$data['RearCamera'],$data['FrontCamera'],$data['CPU'],$data['RAM'],$data['ROM'],$data['network'],$data['battery'],$data['design'],$data['productname']);// duyệt qua từng thành phần 
+		addpromo($data['Promo1'],$data['Promo2'],$data['Promo3'],$data['Promo4'],$data['Promo5'],$data['productname']);// duyệt qua từng thành phần 
 
-		add_product($data['productname'],$data['image'],$data['pricepromo'],$data['pricecurrent'],$data['brand'],$data['quantity'],$data['group'],$data['folder']);
-		header('location: info.php');
+		
+		header('location: add__product.php');
 	}
  	disconnect_db();
 ?>
@@ -108,17 +139,21 @@
 			outline: none
 		}
 		input[type="submit"]{
-			display: block;
+		    display: block;
 			padding: 15px;
 			transition: all 0.5s;
 			cursor: pointer;
-			background-color: #00a88a;
-			border: #00a88a 1px solid;
+			background-color: #d8dbe0;
+			border: #202020 1px solid;
 			outline: none;
+			margin: 0 auto;
+			text-transform: uppercase;
+			border-radius: 12px;
 		}
 		input[type="submit"]:hover{
-			background-color: #fed700;
-			border: #fed700 1px solid;
+			background-color:  #202020 ;
+			border: #f7313f 1px solid;
+			color: #f7313f;
 		}
 	</style>
 </head>
@@ -220,7 +255,81 @@
 						</tr>
 					</tbody>
 				</table>
-				
+				<caption>Bảng thông số kỹ thuật của sản phẩm</caption>
+					<table>
+						<tr>
+							<th>Màn hình</th>
+							<td>
+								<input class="able" type="text" name="Display" value="" required> 
+							</td>				
+						</tr>
+						<tr>
+							<th>Card (Đối với sản phẩm laptop)</th>
+							<td>
+								<input class="able" type="text" name="Card" value="" required>
+							</td>				
+						</tr>
+						<tr>
+							<th>Cổng kết nối </th>
+							<td>
+								<input class="able" type="text" name="gateway" value="" required>
+							</td>				
+						</tr>
+						<tr>
+							<th>Hệ điều hành</th>
+							<td>
+								<input class="able" type="text" name="OS" value="" required>
+							</td>				
+						</tr>
+						<tr>
+							<th>Camera sau</th>
+							<td>
+								<input class="able" type="text" name="RearCamera" value="" required>
+							</td>				
+						</tr>
+						<tr>
+							<th>Camera trước</th>
+							<td>
+								<input class="able" type="text" name="FrontCamera" value="" required>
+							</td>				
+						</tr>
+						<tr>
+							<th>CPU</th>
+							<td>
+								<input class="able" type="text" name="CPU" value="" required>
+							</td>				
+						</tr>
+						<tr>
+							<th>RAM</th>
+							<td>
+								<input class="able" type="text" name="RAM" value="" required>
+							</td>				
+						</tr>
+						<tr>
+							<th>STORAGE</th>
+							<td>
+								<input class="able" type="text" name="ROM" value="" required>
+							</td>				
+						</tr>
+						<tr>
+							<th>Kết nối mạng</th>
+							<td>
+								<input class="able" type="text" name="network" value="" required>
+							</td>				
+						</tr>
+						<tr>
+							<th>Dung lượng pin</th>
+							<td>
+								<input class="able" type="text" name="battery" value="" required>
+							</td>				
+						</tr>
+						<tr>
+							<th>Dimensions (W x D x H)</th>
+							<td>
+								<input class="able" type="text" name="design" value="" required>
+							</td>				
+						</tr>
+				</table>
 				<div class="btn-add"><input type="submit" name="submit" value="Thêm"></div>
 			</form>
 		</div>

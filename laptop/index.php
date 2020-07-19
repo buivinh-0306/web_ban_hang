@@ -23,7 +23,7 @@
 	<title>ROG - Republic of Gamers｜Global | The Choice of Champions</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<!-- <link rel="stylesheet" type="text/css" href="../css/style.css" > -->
-	<!-- <script type="text/javascript" src="https://code.jquery.com/jquery-1.8.3.min.js"></script> -->
+	<script type="text/javascript" src="https://code.jquery.com/jquery-1.8.3.min.js"></script>
 	<style>
 		@font-face{
 			font-family: Xolonium-Regular;
@@ -110,7 +110,7 @@
 			color: #f7313f;
 			margin-top: 5px;
 			transition: ease 0.4s;
-			background-color: #202020;
+			
 		
 		}
 
@@ -295,7 +295,7 @@
     		padding: 0 65px 85px 65px;
 		}
 		.show__Wrapper__button>a{
-			width: 10%;
+			width: 40%;
 			margin: 0 auto;
 			display: block;
 			text-align: center;
@@ -303,11 +303,16 @@
 			font-size: 26px;
 			text-transform: capitalize;
 			color: #202020;
+			cursor: pointer;
 		}
 		.show__Wrapper__button>a:hover{
 			color: #ff0029 ;
 			text-decoration: underline;
 			transition: .4s ease-in-out;
+		}
+		.show__Wrapper__button>span{
+			border: 1px solid #202020;
+    		padding: 2px;
 		}
 	</style>
 	
@@ -378,7 +383,7 @@
 			</a>
 			<?php } ?>
 			<div class="show__Wrapper__button">
-				<a href="" class="show__Wrapper__button__link"><span>more &#10095;</span></a>
+				<a class="show__Wrapper__button__link"><span>View <?php echo $total_records-8; ?> Products</span></a>
 			</div>
 		</div>
 	</div>
