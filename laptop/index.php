@@ -9,7 +9,7 @@
 	}
 	$total_records = $row['total'];
 	$group = "laptop";
-	$data = group_product($group ,8);
+	$data = group_product($group ,100);
 	disconnect_db();
 ?> 
 
@@ -23,8 +23,7 @@
 	<title>ROG - Republic of Gamers｜Global | The Choice of Champions</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<!-- <link rel="stylesheet" type="text/css" href="../css/style.css" > -->
-	<script type="text/javascript" src="https://code.jquery.com/jquery-1.8.3.min.js"></script>
-	<style>
+	<script src="../js/jquery.min.js"></script>	<style>
 		@font-face{
 			font-family: Xolonium-Regular;
 			src: url(../fonts/Xolonium-Regular.woff);
@@ -366,7 +365,7 @@
 		<div class="show__Wrapper">
 			<?php foreach($data as $item) { ?>
 			<a href="detail/?id=<?php echo $item['productID']?>" class="show__Wrapper__item">
-				<img src="../<?php echo $item['ProductImage']; ?>" alt="">
+				<img src="../<?php echo $item['ProductImage']; ?>">
 				<div class="show__Wrapper__item__name">
 					<span><?php echo $item['ProductName']; ?></span>
 				</div>
@@ -382,9 +381,13 @@
 				</div>
 			</a>
 			<?php } ?>
-			<div class="show__Wrapper__button">
-				<a class="show__Wrapper__button__link"><span>View <?php echo $total_records-8; ?> Products</span></a>
-			</div>
+			<!-- <div class="show__Wrapper__button">
+				<a class="show__Wrapper__button__link">
+					View <span>
+						<?php// echo $total_records-8;?> 
+					</span>Products
+				</a>
+			</div> -->
 		</div>
 	</div>
 	<div class="footer__content">
@@ -417,5 +420,25 @@
 			</div>
 		</div>
 	</div>
+	<!-- <script type="text/javascript">
+		var current = 1;
+		var group = "Laptop";
+		var limit = 8;
+		$(document).ready(function() {
+			$('.show__Wrapper__button__link').click(function(event) {
+				total = $('span',this).html()
+				total-=8
+				$('span',this).html(total)
+				if($('span',this).html()<=0){
+					$(this).css('display','none')
+				}
+				current+=1;
+				$.get('../pagination.php',{i:current,group:group,limit:limit},function(data){
+					$('.show__Wrapper').append(data)
+				})
+			});
+
+		});
+	</script> -->
 	</body>
 </html>
