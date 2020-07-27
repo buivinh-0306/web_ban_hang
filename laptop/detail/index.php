@@ -3,6 +3,7 @@
 	require'../../libs/function.php';
 	$banner = show_banner();
 	$slide = show_slide();
+<<<<<<< HEAD
    disconnect_db();
    $id = $_GET['id'];
    $sql = "SELECT * FROM product JOIN promotion ON product.productID = promotion.productID JOIN detail ON product.productID = detail.productID WHERE product.productID = '$id'";
@@ -12,6 +13,17 @@
    if(empty($product)){
        header('localtion:../');
     } 
+=======
+    connect_db();
+    $id = $_GET['id'];
+    $sql = "SELECT * FROM product JOIN promotion ON product.productID = promotion.productID JOIN detail ON product.productID = detail.productID WHERE product.productID = '$id'";
+    $query = mysqli_query($conn,$sql);
+    $product = mysqli_fetch_assoc($query);
+    disconnect_db();
+    if(empty($product)){
+        header('localtion:../');
+    }
+>>>>>>> 574fd8d3e41d4879d156512cf0a418e18e433065
 ?> 
 
 
@@ -27,7 +39,7 @@
         <meta charset="UTF-8">
         <title>ROG - Republic of Gamers｜Global | The Choice of Champions</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <script type="text/javascript" src="https://code.jquery.com/jquery-1.8.3.min.js"></script>
+        <script type="text/javascript" src="../../js/jquery.min.js"></script>
         <link rel="stylesheet" href="css/mystyle.css">
         
     </head>
@@ -72,20 +84,20 @@
         </div>
         <div class="footpath">
             <ul>
-                <li><a href="../../"> home</a><span>›</span></li>
-                <li><a href="../">laptop</a><span>›</span></li>
-                <li><a href="../../">product</a></li>
+                <li><a href="../../">home</a><span>›</span></li>
+                <li><a href="../"><?php echo $product['GroupProduct']; ?></a><span>›</span></li>
+                <li><a href="../../"><?php echo $product['Brand']; ?></a></li>
             </ul>
         </div>
-        <h1 class="product--name">ROG Zephyrus M GM501</h1>
+        <h1 class="product--name"><?php if(isset($product['ProductName'])) echo $product['ProductName']; ?></h1>
         <div class="row--separate"></div>
         <div class="product--info">
             <div class="product__image">
-                <img src="../../images/product/h525.png" alt="">
+                <img src="<?php if(isset($product['ProductName'])) echo '../../'.$product['ProductImage'] ?>" alt="">
             </div>
             <div class="product__order">
                 <div class="product__order__price">
-                    <strong>8.490.000 đ</strong>  
+                    <strong><?php echo number_format($product['PriceCurrent'],0,"","."); ?>đ</strong>  
                     <div class="product__order__price__installment">
                         trả góp 0%
                    </div>
@@ -93,11 +105,11 @@
                 <div class="product__order__promotions">
                     <strong>promotion:</strong>
                     <div class="product__order__promotions__info">
-                        <span>&#10004; giảm ngay 20% vào giá.</span>
-                        <span>&#10004; mua kèm bản quyền Microsoft 365 Personal(giảm giá 600.000đ).</span>
-                        <span>&#10004; mua balo rog khi kèm theo (ưu đãi được giảm 50%).</span>
-                        <span>&#10004; được tặng phiếu mua hàng lên đến 1.000.000đ.</span>
-                        <span>&#10004; tặng chuột không dây ROG.</span>
+                        <span> <?php echo $product['promo1']; ?></span>
+                        <span> <?php if($product['promo2']!=null || $product['promo2']!='') echo $product['promo2']; ?></span>
+                        <span><?php if($product['promo3']!=null || $product['promo2']!='') echo $product['promo3']; ?></span>
+                        <span> <?php if($product['promo4']!=null || $product['promo2']!='') echo $product['promo4']; ?></span>
+                        <span> <?php if($product['promo5']!=null || $product['promo2']!='') echo $product['promo5']; ?></span>
                     </div>
                     <div class="product__order__vipsevice">
                         <strong>sevices:</strong>
@@ -140,23 +152,23 @@
                 <ul>
                     <li>
                         <span class="parameter__detail__span__1">Display :</span>
-                        <span  class="parameter__detail__span__2">NVIDIA® GeForce RTX™ 2080 8GB GDDR6bfmgg</span>
+                        <span  class="parameter__detail__span__2"><?php echo $product['Display']; ?></span>
                     </li>
                     <li>
                         <span class="parameter__detail__span__1">Card :</span>
-                        <span class="parameter__detail__span__2">NVIDIA® GeForce RTX™ 2080 8GB GDDR6</span>
+                        <span class="parameter__detail__span__2"><?php echo $product['Card']; ?></span>
                     </li>
                     <li>
                         <span class="parameter__detail__span__1">OS :</span>
-                        <span  class="parameter__detail__span__2">NVIDIA® GeForce RTX™ 2080 8GB GDDR6</span>
+                        <span  class="parameter__detail__span__2"><?php echo $product['OS']; ?>/span>
                     </li>
                     <li>
                         <span class="parameter__detail__span__1">RAM :</span>
-                        <span  class="parameter__detail__span__2">NVIDIA® GeForce RTX™ 2080 8GB GDDR6</span>
+                        <span  class="parameter__detail__span__2"><?php echo $product['RAM']; ?></span>
                     </li>
                     <li id="end">
                         <span class="parameter__detail__span__1">CPU :</span>
-                        <span  class="parameter__detail__span__2">NVIDIA® GeForce RTX™ 2080 8GB GDDR6</span>
+                        <span  class="parameter__detail__span__2"><?php echo $product['CPU']; ?></span>
                     </li>
                 </ul>
                 <div class="parameter__detail__ViewMore">
@@ -165,7 +177,7 @@
             </div>
             <div class="parameter__VideoReview">
                 <strong>video review sản phẩm:</strong>
-                <span id="parameter__VideoReview__title">đặc điểm nổi bật của </span>                <!-- phpphpphphphphphp-->
+                <span id="parameter__VideoReview__title">đặc điểm nổi bật của <?php if(isset($product['ProductName'])) echo $product['ProductName']; ?></span>                <!-- phpphpphphphphphp-->
                 <img src="../../images/1593158709204.png" alt="">
                 <img src="../../images/icon/youtube.png" alt="" id="parameter__VideoReview__icon">
             </div>
