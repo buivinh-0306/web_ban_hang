@@ -1,17 +1,17 @@
 <?php 
-//    session_start();
-// 	require'../../libs/function.php';
-// 	$banner = show_banner();
-// 	$slide = show_slide();
-//    disconnect_db();
-//    $id = $_GET['id'];
-//    $sql = "SELECT * FROM product JOIN promotion ON product.productID = promotion.productID JOIN detail ON product.productID = detail.productID WHERE product.productID = '$id'";
-//    $query = mysqli_query($conn,$sql);
-//    $product = mysqli_fetch_assoc($query);
-//    disconnect_db();
-//    if(empty($product)){
-//        header('localtion:../');
-  // }
+   session_start();
+	require'../../libs/function.php';
+	$banner = show_banner();
+	$slide = show_slide();
+   disconnect_db();
+   $id = $_GET['id'];
+   $sql = "SELECT * FROM product JOIN promotion ON product.productID = promotion.productID JOIN detail ON product.productID = detail.productID WHERE product.productID = '$id'";
+   $query = mysqli_query($conn,$sql);
+   $product = mysqli_fetch_assoc($query);
+   disconnect_db();
+   if(empty($product)){
+       header('localtion:../');
+    } 
 ?> 
 
 
