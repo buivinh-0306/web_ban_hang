@@ -636,6 +636,7 @@ body {
 .parameter__detail__span__2{
     margin-left: 25px;
     text-align: left;
+    width: 55%;   	
 }
 .parameter__detail__ViewMore {
     text-align: center;

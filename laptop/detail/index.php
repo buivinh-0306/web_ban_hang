@@ -3,17 +3,8 @@
 	require'../../libs/function.php';
 	$banner = show_banner();
 	$slide = show_slide();
-<<<<<<< HEAD
-   disconnect_db();
-   $id = $_GET['id'];
-   $sql = "SELECT * FROM product JOIN promotion ON product.productID = promotion.productID JOIN detail ON product.productID = detail.productID WHERE product.productID = '$id'";
-   $query = mysqli_query($conn,$sql);
-   $product = mysqli_fetch_assoc($query);
-   disconnect_db();
-   if(empty($product)){
-       header('localtion:../');
-    } 
-=======
+ 
+
     connect_db();
     $id = $_GET['id'];
     $sql = "SELECT * FROM product JOIN promotion ON product.productID = promotion.productID JOIN detail ON product.productID = detail.productID WHERE product.productID = '$id'";
@@ -23,7 +14,7 @@
     if(empty($product)){
         header('localtion:../');
     }
->>>>>>> 574fd8d3e41d4879d156512cf0a418e18e433065
+
 ?> 
 
 
@@ -41,47 +32,167 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <script type="text/javascript" src="../../js/jquery.min.js"></script>
         <link rel="stylesheet" href="css/mystyle.css">
-        
+        <style>
+	.header__wrapper{
+    height: auto;
+    width: 100%;
+    padding: 0 65px;
+    display: flex;
+    justify-content: space-between;
+    direction: ltr;
+    background-color: #202020;
+    box-shadow: 0 5px 5px 1px rgba(0,0,0,.1);
+}
+
+.header__wrapper__logo{
+    width: 15.899999999%;
+    padding: 12px 0;
+    display: block;
+}
+
+.header__wrapper__logo img{
+    width: 100%;
+}
+
+.header__wrapper__list{
+    display: flex;
+    list-style: none;
+    padding: 12px 0;
+    font-size: 15px;
+    align-items: center;
+}
+
+.header__wrapper__list>li{
+    margin: 0 19px;
+}
+.header__wrapper__list>li a{
+    text-decoration: none;
+    color: #fff;
+    display: block;
+    cursor: pointer;
+}
+
+.header__wrapper__list>li a:hover{
+    color: #f7313f;
+    transition: cubic-bezier(0.4, 0, 1, 1)  .4s;
+}
+
+.header__wrapper__icon{
+    width: 8.899999999%;
+    padding: 12px 0;
+    display: flex;
+    align-items: center;
+}
+.icon__child__2nd,.icon__child__1st{
+    width: 50%;
+}
+.icon__child__2nd span,
+.icon__child__1st span{
+    display: block;
+    cursor: pointer;
+}
+
+.icon__child__1st img{
+    width: 40%;
+}
+
+.icon__child__2nd img{
+    width:37%;
+
+}
+.header__seach{
+    background-color: #202020;
+    width: 100%;
+    height: 122px;
+    box-shadow: 0 5px 5px 1px rgba(0,0,0,.1);
+    display: none;
+    align-items: center;
+    padding: 36px 0;
+}
+.header__seach__input{
+    margin: 0 auto;
+    border: 1px solid #767676;
+    display: flex;
+    padding: 11px;
+    align-items: center;
+}
+
+.header__seach__input input{
+    background-color: transparent;
+    border: none;
+    color: #767676;
+    outline: none;
+    font-size: 17px;
+    width: 100%;
+    height: 100%;
+}
+
+.header__seach img{
+    width: 50%;
+    margin-left: 13px;
+}
+.header__seach__input__icon{
+    width: 6%;
+}
+
+.header__seach__wrapper{
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+}
+
+.header__seach__close{
+    margin-left: 50px;
+    width: 20px;
+    height: 20px;
+}
+
+.header__seach__close a{
+    color: #767676;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 600;
+}
+	</style>
     </head>
     <body>
         <div class="header header--black">
-            <div class="wrap--main">
-                <a href="../../index.php" class="wrap__logo" title="về trang chủ">
-                    <img src="../../images/logo_rog.png" alt="" title="Trở Về Trang Chủ">
-                </a>
-                <div class="wrap__menu">
-                    <ul>
-                        <li>
-                            <a href="#">Products</a>
-                            <ul>
-                                <div>
-                                    <li><a href="../">Laptops</a></li>
-                                    <li><a href="#">Desktops</a></li>
-                                    <li><a href="#">ROG phones</a></li>
-                                    <li><a href="#">Components</a></li>
-                                    <li><a href="#">Gaming Gears</a></li>
-                                </div>				
-                            </ul>
-
-                        </li>
-                        <li><a href="#">Innovation</a></li>
-                        <li><a href="#">Community</a></li>
-
-                        <li>
-                            <a href="#">Downloads</a>
-                            <ul>
-                                <div>
-                                    <li><a href="#">Wallpapers</a></li>
-                                    <li><a href="#">Aura Sync</a></li>
-                                    <li><a href="#">Drivers</a></li>
-                                </div>
-                            </ul>
-                        </li>
-                        <li><a href="#">Support</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
+			<div class="header__wrapper">
+				<a href="" class="header__wrapper__logo">
+					<img src="../../images/banner,background/logo_rog.png" alt="">
+				</a>
+				<ul class="header__wrapper__list">
+					<li> <a>PRODUCTS</a></li>
+					<li> <a>INNOVATION</a></li>
+					<li> <a>DOWNLOAD</a></li>
+					<li> <a>COMMUNITY</a></li>
+					<li> <a>WHAT'S HOT</a></li>
+					<li> <a>SUPPORT</a></li>
+				</ul>
+				<div class="header__wrapper__icon">
+					<div class="icon__child__1st"> 
+					<span id="open"> <img src="../../images/icon/seach.png" alt=""></span>
+					</div>
+					<div class="icon__child__2nd"> 
+						<span><img src="../../images/icon/icon__user.png" alt=""></span>
+					</div>
+					
+				</div>
+			</div>
+			<div class="header__seach">
+				<div class="header__seach__wrapper">
+					<div class="header__seach__input">
+						<div class="header__seach__input__icon">
+							<img src="../../images/icon/seach__input.png" alt="">
+						</div>
+						<input type="text">                
+					</div>
+					<div class="header__seach__close">
+					<a href="" id="close">X</a> 
+					</div>
+				</div>
+			</div>
+		</div>
         <div class="footpath">
             <ul>
                 <li><a href="../../">home</a><span>›</span></li>
@@ -160,7 +271,7 @@
                     </li>
                     <li>
                         <span class="parameter__detail__span__1">OS :</span>
-                        <span  class="parameter__detail__span__2"><?php echo $product['OS']; ?>/span>
+                        <span  class="parameter__detail__span__2"><?php echo $product['OS']; ?></span>
                     </li>
                     <li>
                         <span class="parameter__detail__span__1">RAM :</span>

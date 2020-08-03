@@ -204,8 +204,10 @@ body {
 }
 .Wrapper__item{
   position: relative;
-  
   width: 100%;
+}
+.Wrapper__item:first-child{
+ margin-left:0;	
 }
 .Wrapper__item .item{
   position: relative;
